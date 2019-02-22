@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceModule } from './service/service.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
 	declarations: [
@@ -11,6 +12,8 @@ import { ServiceModule } from './service/service.module';
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
+		ServiceModule,
+		BrowserAnimationsModule,
 		ServiceModule
 	],
 	providers: [],
