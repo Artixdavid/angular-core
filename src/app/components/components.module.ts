@@ -10,8 +10,6 @@ import { CreateUserComponent } from './user/create-user/create-user.component';
 import { RouterModule } from '@angular/router';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
-import { LoginComponent } from './auth/login/login.component';
-import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 
 @NgModule({
 	imports: [
@@ -28,9 +26,7 @@ import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.
 		ComponentsComponent,
 		SidebarComponent,
 		TopbarComponent,
-		CreateUserComponent,
-		LoginComponent,
-		ForgotPasswordComponent
+		CreateUserComponent
 	]
 })
 export class ComponentsModule { }
