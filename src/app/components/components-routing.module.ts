@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ComponentsComponent } from './components.component';
+import { CreateUserComponent } from './user/create-user/create-user.component';
 const routes: Routes = [
 	{
 		path: '',
@@ -8,7 +9,8 @@ const routes: Routes = [
 		children: [
 			{ path: 'user', loadChildren: './user/user.module#UserModule' },
 		]
-	}
+	},
+	{ path: 'create-user', component: CreateUserComponent}
 ];
 
 @NgModule({

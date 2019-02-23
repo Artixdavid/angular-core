@@ -1,0 +1,94 @@
+<div class="p-grid">
+	<!--<form [formGroup]="createUser" (ngSubmit)="onSubmit(userform.value)">-->
+	<div class="p-col-4">
+		<p-card header="Advanced Card" subheader="Subheader" [style]="{width: '95%'}" styleClass="ui-card-shadow">
+			<p-header>
+				<img src="Card" src="assets/img/usercard.png">
+			</p-header>
+			<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
+				quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</div>
+			<p-footer>
+				
+			</p-footer>
+		</p-card>
+	</div>
+	
+	<div class="p-col-8">
+		<p-card [style]="{width: '100%'}" header="Editar Perfil">
+			<form>
+				<div class="p-grid">
+
+					<div class="p-col-6">
+						<span class="ui-float-label">
+							<input type="text" pInputText> 
+							<label>Username</label>
+						</span>
+					</div>
+
+					<div class="p-col-6">
+						<span class="ui-float-label">
+							<input type="text" pInputText> 
+							<label>Email</label>
+						</span>
+					</div>
+
+					<div class="p-col-4">
+						<span class="ui-float-label">
+							<input type="text" pInputText> 
+							<label>Nombres</label>
+						</span>
+					</div>
+
+					<div class="p-col-4">
+						<span class="ui-float-label">
+							<input type="text" pInputText> 
+							<label>Apellido</label>
+						</span>
+					</div>
+
+					<div class="p-col-4">
+						<span class="ui-float-label">
+							<input type="text" pInputText> 
+							<label>Apellido Materno</label>
+						</span>
+					</div>
+
+					<div class="p-col-4">
+						<span class="ui-float-label">
+							<input type="text" pInputText> 
+							<label>Tel&eacute;fono Movil</label>
+						</span>
+					</div>
+
+					<div class="p-col-4">
+						<span class="ui-float-label">
+							<p-calendar [touchUI]="true" [readonlyInput]="true"></p-calendar>
+							<label>Fecha de Nacimiento</label>
+						</span>
+					</div>
+
+					<div class="p-col-12">
+						<span class="ui-float-label">
+							<input type="text" pInputText> 
+							<label>Direcci&oacute;n</label>
+						</span>
+					</div>
+
+					<div class="p-col-12">
+						<span class="ui-float-label">
+							<textarea rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
+							<label>Acerca de mi</label>
+						</span>
+					</div>
+
+					<div class="p-col-2 p-offset-5">
+						<button pButton type="button" label="Actualizar Perfil" class="ui-button-raised"></button>
+					</div>
+
+				</div>
+			</form>
+		</p-card>
+	</div>
+		
+	
+</div>

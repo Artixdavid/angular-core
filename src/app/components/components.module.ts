@@ -6,6 +6,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TopbarComponent } from './topbar/topbar.component';
+import { CreateUserComponent } from './user/create-user/create-user.component';
 
 @NgModule({
 	imports: [
@@ -15,6 +16,11 @@ import { TopbarComponent } from './topbar/topbar.component';
 		FormsModule,
 		ReactiveFormsModule,
 	],
-	declarations: [ComponentsComponent, SidebarComponent, TopbarComponent]
+	declarations: [
+		ComponentsComponent, 
+		SidebarComponent, 
+		TopbarComponent,
+		CreateUserComponent
+	]
 })
 export class ComponentsModule { }
