@@ -1,10 +1,7 @@
 <div class="container">
-
 	<!-- Outer Row -->
 	<div class="row justify-content-center">
-
 		<div class="col-xl-6 col-lg-12 col-md-9">
-
 			<div class="card o-hidden border-0 shadow-lg my-5">
 				<div class="card-body p-4">
 				<!-- Nested Row within Card Body -->
@@ -34,7 +31,7 @@
 									
 									
 										<div class="p-col-6 p-offset-3">
-											<button pButton type="button" label="Iniciar Sesi&oacute;n" class="ui-button-raised"></button>
+											<button pButton type="button" label="Iniciar Sesi&oacute;n" class="ui-button-raised" [routerLink]="['/componentes']"></button>
 										</div>
 									<hr>
 									<!-- <a href="index.html" class="btn btn-google btn-user btn-block">
@@ -47,19 +44,16 @@
 								</form>
 								<hr>
 								<div class="text-center">
-									<a class="small" href="forgot-password.html">¿Olvido su Contraseña?</a>
+									<a class="small" [routerLink]="['/forgot-password']">¿Olvido su Contraseña?</a>
 								</div>
 								<div class="text-center">
-									<a class="small" href="forgot-password.html">Crear cuenta</a>
+									<a class="small" [routerLink]="['/componentes/create-user']">Crear cuenta</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-
 		</div>
-
 	</div>
-
 </div>

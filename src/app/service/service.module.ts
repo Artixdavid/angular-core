@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
 	declarations: [],
-	imports: [
-		CommonModule
+	imports: [CommonModule],
+	providers: [
+		//aqui van los servicios
 	]
 })
 export class ServiceModule { }
