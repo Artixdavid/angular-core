@@ -6,8 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import { ProfileUserComponent } from './profile-user/profile-user.component';
-import { CreateUserComponent } from './create-user/create-user.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
 	imports: [
@@ -20,8 +19,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
 		InputTextareaModule
 	],
 	declarations: [
-		ProfileUserComponent,
-		CreateUserComponent
+		UserProfileComponent
 	]
 })
 export class UserModule { }

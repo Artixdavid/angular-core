@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-profile-user',
-  templateUrl: './profile-user.component.html'
+  selector: 'app-user-profile',
+  templateUrl: './user-profile.component.html'
 })
-export class ProfileUserComponent implements OnInit {
+export class UserProfileComponent implements OnInit {
 
 	userName:string = "David";
 
