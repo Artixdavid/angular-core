@@ -9,47 +9,47 @@
 						<div class="text-center">
 							<h1 class="h4 text-gray-900 mb-4">¡¡Registrate!!</h1>
 						</div>
-						<form>
+						<form [formGroup]="formCreateUser">
 							<div class="p-grid">
 
 								<div class="p-col-6">
 									<span class="ui-float-label">
-										<input type="text" pInputText> 
+										<input type="text" formControlName="name" pInputText maxlength="20"> 
 										<label>Nombre</label>
 									</span>
 								</div>
 
 								<div class="p-col-6">
 									<span class="ui-float-label">
-										<input type="text" pInputText> 
+										<input type="text" formControlName="lastName" pInputText maxlength="20"> 
 										<label>Apellido</label>
 									</span>
 								</div>
 
 								<div class="p-col-12">
 									<span class="ui-float-label">
-										<input type="text" pInputText> 
+										<input type="email" formControlName="email" pInputText maxlength="50"> 
 										<label>Email</label>
 									</span>
 								</div>
 
 								<div class="p-col-6">
 									<span class="ui-float-label">
-										<input type="text" pInputText> 
+										<input type="password" formControlName="password" pInputText maxlength="20"> 
 										<label>Contraseña</label>
 									</span>
 								</div>
 
 								<div class="p-col-6">
 									<span class="ui-float-label">
-										<input type="text" pInputText> 
+										<input type="password" formControlName="repeatPassword" pInputText maxlength="20"> 
 										<label>Repita la Contraseña</label>
 									</span>
 								</div>
 
 								
 								<div class="p-col-4 p-offset-4">
-									<button pButton type="button" label="Registrate" class="ui-button-raised"></button>
+									<button pButton type="button" (click)="onRegistrar()" [disabled]="!formCreateUser.valid" label="Registrate" class="ui-button-raised"></button>
 								</div>
 								<hr>
 								<!-- <a href="index.html" class="btn btn-google btn-user btn-block">

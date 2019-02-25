@@ -38,4 +38,8 @@ export abstract class BaseService <E extends Base, Z extends BaseMetadata<E>> {
 	getList(): Observable<E[]> {
 		return this.http.get<E[]>(`${this.getUrl()}`, { headers: this.getHeader() });
 	}
+
+	create(E): Observable<E>{
+		return this.http.post<E>(this.getUrl(), E, {headers: this.getHeader()});
+	}
 }
