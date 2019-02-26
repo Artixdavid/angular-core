@@ -1,12 +1,15 @@
 <div class="p-grid">
 	<!--<form [formGroup]="createUser" (ngSubmit)="onSubmit(userform.value)">-->
 	<div class="p-col-4">
-		<p-card header="Advanced Card" subheader="Subheader" [style]="{width: '95%'}" styleClass="ui-card-shadow">
+		<p-card [header]="headerCard" [subheader]="subHeaderCard" [style]="{width: '95%'}" styleClass="ui-card-shadow">
 			<p-header>
 				<img src="Card" src="assets/img/usercard.png">
 			</p-header>
-			<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-				quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</div>
+			<div>
+				<p>
+					{{ aboutMe }}
+				</p>
+			</div>
 			<p-footer>
 				
 			</p-footer>
@@ -15,75 +18,75 @@
 	
 	<div class="p-col-8">
 		<p-card [style]="{width: '100%'}" header="Editar Perfil">
-			<form>
+			<form [formGroup]="formUser">
 				<div class="p-grid">
 
 					<div class="p-col-6">
 						<span class="ui-float-label">
-							<input type="text" pInputText> 
+							<input type="text" formControlName="userName" pInputText> 
 							<label>Username</label>
 						</span>
 					</div>
 
 					<div class="p-col-6">
 						<span class="ui-float-label">
-							<input type="text" pInputText> 
+							<input type="text" formControlName="email" pInputText> 
 							<label>Email</label>
 						</span>
 					</div>
 
 					<div class="p-col-4">
 						<span class="ui-float-label">
-							<input type="text" pInputText> 
+							<input type="text" formControlName="name" pInputText> 
 							<label>Nombre</label>
 						</span>
 					</div>
 
 					<div class="p-col-4">
 						<span class="ui-float-label">
-							<input type="text" pInputText> 
+							<input type="text" formControlName="secondName" pInputText> 
 							<label>Segundo Nombre</label>
 						</span>
 					</div>
 
 					<div class="p-col-4">
 						<span class="ui-float-label">
-							<input type="text" pInputText> 
+							<input type="text" formControlName="lastName" pInputText> 
 							<label>Apellido</label>
 						</span>
 					</div>
 
 					<div class="p-col-4">
 						<span class="ui-float-label">
-							<input type="text" pInputText> 
+							<input type="text" formControlName="motherLastName" pInputText> 
 							<label>Apellido Materno</label>
 						</span>
 					</div>
 
 					<div class="p-col-4">
 						<span class="ui-float-label">
-							<input type="text" pInputText> 
-							<label>Tel&eacute;fono Movil</label>
+							<input type="text" formControlName="phone" pInputText> 
+							<label>Tel&eacute;fono</label>
 						</span>
 					</div>
 
 					<div class="p-col-4">
 						<span class="ui-float-label">
-							<p-calendar [touchUI]="true" [readonlyInput]="true"></p-calendar>
+							<p-calendar [touchUI]="true" formControlName="fechaNacimiento" [readonlyInput]="true"></p-calendar>
 							<label>Fecha de Nacimiento</label>
 						</span>
 					</div>
 
 					<div class="p-col-12">
 						<span class="ui-float-label">
-							<input type="text" pInputText> 
+							<input type="text" formControlName="address" pInputText> 
 							<label>Direcci&oacute;n</label>
 						</span>
 					</div>
 
 					<div class="p-col-12">
 						<span class="ui-float-label">
-							<textarea rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
+							<textarea rows="5" cols="30" formControlName="aboutMe" pInputTextarea autoResize="autoResize"></textarea>
 							<label>Acerca de mi</label>
 						</span>
 					</div>

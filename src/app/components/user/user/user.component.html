@@ -1,4 +1,8 @@
-<div class="p-grid">
+<div class="p-grid p-grid p-justify-end">
+
+	<div class="p-col-1 p-col">
+		<button pButton type="button" [routerLink]="['../../create-user']" icon="pi pi-plus" iconPos="right" label="Agregar"></button>
+	</div>
 	<div class="p-col-12">
 		<p-table [value]="user">
 			<ng-template pTemplate="header">
@@ -26,5 +30,3 @@
 		</p-table>
 	</div>
 </div>
-
-<p-toast></p-toast>

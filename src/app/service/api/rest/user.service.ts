@@ -13,8 +13,13 @@ export class UserService extends BaseService<User, UserMetadata> {
 	constructor(protected http: HttpClient) {
 		super(http);
 	}
+
 	getClassUrl(): string {
 		return 'users';
+	}
+
+	getUserByUserName(userName:string ){
+		return this.http.get<any>(`${this.getUrl()}/${userName}/user`, { headers: this.getHeader() });
 	}
 	
 }

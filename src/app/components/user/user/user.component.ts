@@ -27,12 +27,10 @@ export class UserComponent extends ToastComponent implements OnInit {
 
 	getList(){
 		this.userService.getList().subscribe((data)=>{
-			console.log(data,1);
 			this.user = data;
 
 		}, (error:HttpErrorResponse) =>{
 			this.showError("Error","Algo salio mal ☹");
-			console.log(error);
 			
 			/*if(error.message){
 				this.showError(error.message);
@@ -44,19 +42,7 @@ export class UserComponent extends ToastComponent implements OnInit {
 	}
 
 	viewProfile(data:any){
-		this.userService.getById(data.id).subscribe((data)=>{
-			this.router.navigate([`componentes/user/${data.username}/profile`]);
-		},(error:HttpErrorResponse) =>{
-			this.showError("Error","Algo salio mal ☹");
-			console.log(error);
-			
-			/*if(error.message){
-				this.showError(error.message);
-				return;
-			}
-			*/
-			
-		})
+		this.router.navigate([`componentes/user/${data.username}/profile`]);
 	}
 
 	

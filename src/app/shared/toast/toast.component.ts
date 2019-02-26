@@ -14,6 +14,10 @@ export class ToastComponent {
 
 	}
 
+	toCapitalCase(string) {
+		return string.charAt(0).toUpperCase() + string.slice(1);
+	}
+
 	showError(titulo: string, mensaje: string) {
 		this.messageService.add({
 			severity: 'error',

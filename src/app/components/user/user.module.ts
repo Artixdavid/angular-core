@@ -9,7 +9,9 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserComponent } from './user/user.component';
 import { TableModule } from 'primeng/table';
-import {ToastModule} from 'primeng/toast';
+import { ToastModule } from 'primeng/toast';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
 	imports: [
 		UserRoutingModule,
@@ -20,7 +22,9 @@ import {ToastModule} from 'primeng/toast';
 		CalendarModule,
 		InputTextareaModule,
 		TableModule,
-		ToastModule
+		ToastModule,
+		FormsModule,
+		ReactiveFormsModule
 	],
 	declarations: [
 		UserProfileComponent,
