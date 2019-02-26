@@ -11,6 +11,8 @@ import { RouterModule } from '@angular/router';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 @NgModule({
 	imports: [
@@ -28,7 +30,8 @@ import { ToastModule } from 'primeng/toast';
 		ComponentsComponent,
 		SidebarComponent,
 		TopbarComponent,
-		CreateUserComponent
+		CreateUserComponent,
+		DashboardComponent
 	]
 })
 export class ComponentsModule { }
