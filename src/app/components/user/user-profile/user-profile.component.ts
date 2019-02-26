@@ -58,7 +58,7 @@ export class UserProfileComponent extends ToastComponent implements OnInit {
 			this.showError("Error","Algo salio mal ☹");
 			console.log(error);
 			
-		})
+		});
 	}
 
 	formInit(){
