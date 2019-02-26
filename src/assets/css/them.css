@@ -5,3 +5,7 @@
 .ui-calendar{
 	width: 100%;
 }
+
+.btn-roundedy button{
+	border-radius: 50% !important;
+}

@@ -1,0 +1,64 @@
+import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/service/api/rest/user.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { MessageService } from 'primeng/components/common/messageservice';
+import { ToastComponent } from 'src/app/shared/toast/toast.component';
+import { Router } from '@angular/router';
+@Component({
+	selector: 'app-user',
+	templateUrl: './user.component.html',
+	styleUrls: ['./user.component.css']
+})
+export class UserComponent extends ToastComponent implements OnInit {
+
+	constructor(
+		private userService: UserService,
+		public messageService: MessageService,
+		public router: Router,
+	) {
+		super(messageService,router);
+	}
+
+	user = [];
+
+	ngOnInit() {
+		this.getList();
+	}
+
+	getList(){
+		this.userService.getList().subscribe((data)=>{
+			console.log(data,1);
+			this.user = data;
+
+		}, (error:HttpErrorResponse) =>{
+			this.showError("Error","Algo salio mal ☹");
+			console.log(error);
+			
+			/*if(error.message){
+				this.showError(error.message);
+				return;
+			}
+			*/
+			
+		});
+	}
+
+	viewProfile(data:any){
+		this.userService.getById(data.id).subscribe((data)=>{
+			this.router.navigate([`componentes/user/${data.username}/profile`]);
+		},(error:HttpErrorResponse) =>{
+			this.showError("Error","Algo salio mal ☹");
+			console.log(error);
+			
+			/*if(error.message){
+				this.showError(error.message);
+				return;
+			}
+			*/
+			
+		})
+	}
+
+	
+
+}

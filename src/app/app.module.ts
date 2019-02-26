@@ -5,7 +5,8 @@ import { AppComponent } from './app.component';
 import { ServiceModule } from './service/service.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './components/auth/auth.module';
-
+import { HttpClientModule } from '@angular/common/http';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 @NgModule({
 	declarations: [
@@ -16,11 +17,12 @@ import { AuthModule } from './components/auth/auth.module';
 		AppRoutingModule,
 		ServiceModule,
 		BrowserAnimationsModule,
-		ServiceModule,
-		AuthModule
-
+		AuthModule,
+		HttpClientModule
 	],
-	providers: [],
+	providers: [
+		MessageService
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

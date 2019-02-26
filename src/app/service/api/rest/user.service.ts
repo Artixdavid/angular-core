@@ -14,7 +14,7 @@ export class UserService extends BaseService<User, UserMetadata> {
 		super(http);
 	}
 	getClassUrl(): string {
-		return 'cliente';
+		return 'users';
 	}
 	
 }
