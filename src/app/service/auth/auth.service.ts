@@ -26,6 +26,9 @@ export class AuthService {
   
 	public login(data): void {
 		localStorage.setItem("etag", `Bearer ${data.token}`);
+		localStorage.setItem("etag", `Bearer ${data.token}`);
+		localStorage.setItem("etag", `Bearer ${data.token}`);
+		localStorage.setItem("etag", `Bearer ${data.token}`);
 
 		this.router.navigate([`componentes/user`]);
 	}
