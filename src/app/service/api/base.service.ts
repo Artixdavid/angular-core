@@ -27,10 +27,7 @@ export abstract class BaseService <E extends Base, Z extends BaseMetadata<E>, T 
 
 	protected getHeader(): HttpHeaders {
 		return new HttpHeaders({
-			"etag": localStorage.getItem("eTag"),
-			//"Access-Control-Allow-Origin": "*",
-			//"Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS, HEAD",
-			//"Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With, Accept",
+			"etag": localStorage.getItem("eTag") ? localStorage.getItem("eTag") : null,
 		});
 	}
 

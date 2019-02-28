@@ -31,9 +31,19 @@
 									
 									
 										<div class="p-col-6 p-offset-3">
-											<button pButton type="button" label="Iniciar Sesi&oacute;n" class="ui-button-raised" (click)="login()"></button>
+											<button pButton #loginBtn type="button" 
+												label="Iniciar Sesi&oacute;n" 
+												class="ui-button-raised" 
+												(click)="login()"
+												iconPos="right"
+												[icon]="iconBtn"
+												[disabled]="!formLogin.valid && !valid"
+											>
+											</button>
 										</div>
 									<hr>
+
+									
 									<!-- <a href="index.html" class="btn btn-google btn-user btn-block">
 									<i class="fab fa-google fa-fw"></i> Login with Google
 									</a>
@@ -57,3 +67,17 @@
 		</div>
 	</div>
 </div>
+
+<p-toast></p-toast>
+<pre>
+	valid: {{
+	   valid
+   }}
+
+   form: {{formLogin.valid}}
+</pre>
+
+
+<pre>
+	{{formLogin.value | json}}
+</pre>

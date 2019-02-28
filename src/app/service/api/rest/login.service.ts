@@ -18,7 +18,7 @@ export class LoginService extends BaseService<any, any, LoginDto> {
 	}
 
 	login(E:LoginDto):Observable<LoginDto>{
-		let headers = this.getHeader();
+		let headers = new HttpHeaders();
 		headers = headers.append('Access-Control-Allow-Credentials', "true");
 		headers = headers.append( 'Access-Control-Allow-Headers','application/json');
 		return this.http.post<LoginDto>(this.getUrl(), E, {headers: headers });

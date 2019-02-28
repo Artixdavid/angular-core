@@ -13,8 +13,6 @@ export class ComponentsComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		console.log(this.router);
-
 		if(this.router.url == '/componentes'){
 			this.router.navigate([`componentes/dashboard`]);
 		}

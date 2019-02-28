@@ -19,13 +19,17 @@ export class ToastComponent {
 	}
 
 	showError(titulo: string, mensaje: string) {
+		this.clearMessage();
 		this.messageService.add({
 			severity: 'error',
 			summary: titulo, //titulo
 			detail: mensaje //mensaje
 		});
 
-		
+	}
+
+	clearMessage(){
+		this.messageService.clear();
 	}
 
 }

@@ -5,10 +5,14 @@ import { Router, ActivatedRouteSnapshot, RouterStateSnapshot, CanActivate} from 
 })
 export class AuthGuardService implements CanActivate {
 
-	constructor() { }
+	constructor(private router: Router) {}
 
-	canActivate(){
-		
-		return true;
+	canActivate() {
+		if (localStorage.getItem('isLoggedin')) {
+			return true;
+		}
+
+		this.router.navigate(['/login']);
+		return false;
 	}
 }
