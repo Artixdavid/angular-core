@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 @Injectable({
 	providedIn: 'root'
 })
-export abstract class BaseService <E extends Base, Z extends BaseMetadata<E>> {
+export abstract class BaseService <E extends Base, Z extends BaseMetadata<E>, T extends any = null> {
 
 	static readonly API_URL = environment.API_URL + "";
 
@@ -27,7 +27,10 @@ export abstract class BaseService <E extends Base, Z extends BaseMetadata<E>> {
 
 	protected getHeader(): HttpHeaders {
 		return new HttpHeaders({
-			'etag': localStorage.getItem("eTag")
+			"etag": localStorage.getItem("eTag"),
+			//"Access-Control-Allow-Origin": "*",
+			//"Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS, HEAD",
+			//"Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With, Accept",
 		});
 	}
 

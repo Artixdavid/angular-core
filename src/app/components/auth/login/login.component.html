@@ -12,26 +12,26 @@
 								<div class="text-center">
 									<h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
 								</div>
-								<form class="user">
+								<form class="user" [formGroup]="formLogin">
 									<div class="p-grid">
 
 										<div class="p-col-12">
 											<span class="ui-float-label">
-												<input type="text" pInputText> 
+												<input type="text" formControlName="username" maxlength="20" pInputText> 
 												<label>Nombre</label>
 											</span>
 										</div>
 
 										<div class="p-col-12">
 											<span class="ui-float-label">
-												<input type="password" pInputText> 
+												<input type="password" formControlName="password" maxlength="30" pInputText> 
 												<label>Contraseña</label>
 											</span>
 										</div>
 									
 									
 										<div class="p-col-6 p-offset-3">
-											<button pButton type="button" label="Iniciar Sesi&oacute;n" class="ui-button-raised" [routerLink]="['/componentes']"></button>
+											<button pButton type="button" label="Iniciar Sesi&oacute;n" class="ui-button-raised" (click)="login()"></button>
 										</div>
 									<hr>
 									<!-- <a href="index.html" class="btn btn-google btn-user btn-block">

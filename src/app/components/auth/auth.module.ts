@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [
@@ -15,7 +16,9 @@ import { InputTextModule } from 'primeng/inputtext';
 		CommonModule,
 		AuthRoutingModule,
 		ButtonModule,
-		InputTextModule
+		InputTextModule,
+		FormsModule,
+		ReactiveFormsModule
 	]
 })
 export class AuthModule { }
