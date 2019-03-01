@@ -1,35 +1,40 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Validation } from 'src/app/shared/global/validation';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class AuthService {
 
 	private _idToken: string;
 	private _accessToken: string;
 	private _expiresAt: number;
-  
+
+	public validation = null;
+
 	constructor(public router: Router) {
+		this.validation = new Validation();
 		this._idToken = '';
 		this._accessToken = '';
 		this._expiresAt = 0;
+
 	}
-  
+
 	get accessToken(): string {
 		return this._accessToken;
 	}
-  
+
 	get idToken(): string {
 		return this._idToken;
 	}
-  
-	public login(data): void {
-		localStorage.setItem("etag", `Bearer ${data.token}`);
-		localStorage.setItem("etag", `Bearer ${data.token}`);
-		localStorage.setItem("etag", `Bearer ${data.token}`);
-		localStorage.setItem("etag", `Bearer ${data.token}`);
 
+	public login(data): void {
+		localStorage.setItem("isLoggedin", "true");
+		localStorage.setItem("etag", `Bearer ${data.token}`);
+		localStorage.setItem("name", `${this.validation.toCapitalCase(data.userData.firstName)}`);
+		localStorage.setItem("lastname", `${this.validation.toCapitalCase(data.userData.lastName)}`);
+		localStorage.setItem("email", `${data.userData.lastName}`);
 		this.router.navigate([`componentes/user`]);
 	}
 
@@ -73,7 +78,7 @@ export class AuthService {
 		this._idToken = '';
 		this._expiresAt = 0;
 		// Remove isLoggedIn flag from localStorage
-		localStorage.removeItem('isLoggedIn');
+		localStorage.clear();
 		// Go back to the home route
 		this.router.navigate(['/login']);
 	}
@@ -81,6 +86,11 @@ export class AuthService {
 	public isAuthenticated(): boolean {
 		// Check whether the current time is past the
 		// access token's expiry time
-		return new Date().getTime() < this._expiresAt;
+		//return new Date().getTime() < this._expiresAt;
+		if (localStorage.getItem('isLoggedin')) {
+			return true;
+		}
+		
+		return false;
 	}
 }

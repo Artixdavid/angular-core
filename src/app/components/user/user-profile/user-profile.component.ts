@@ -12,13 +12,13 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class UserProfileComponent extends ToastComponent implements OnInit {
 
-	userName:string = null;
+	userName: string = null;
 	user: any = null;
 
 	headerCard: string = null;
 	subHeaderCard: string = null;
 
-	aboutMe:string = null;
+	aboutMe: string = null;
 
 	formUser: FormGroup;
 
@@ -29,17 +29,17 @@ export class UserProfileComponent extends ToastComponent implements OnInit {
 		private route: ActivatedRoute,
 		private formBuilder: FormBuilder
 	) {
-		super(messageService,router);
+		super(messageService, router);
 		this.route.params.subscribe((params) => {
 			this.userName = params.userName;
 
-			if(this.userName == null || this.userName == undefined){
+			if (this.userName == null || this.userName == undefined) {
 				this.showError("Error", "No se pudo mostrar el usuario");
 				this.router.navigate([`componentes/user/list-user`]);
 			}
 
 			this.viewProfile();
-			
+
 		});
 
 	}
@@ -48,22 +48,22 @@ export class UserProfileComponent extends ToastComponent implements OnInit {
 		this.formInit();
 	}
 
-	viewProfile(){
-		this.userService.getUserByUserName(this.userName).subscribe((data)=>{
+	viewProfile() {
+		this.userService.getUserByUserName(this.userName).subscribe((data) => {
 			this.user = data;
 			console.log(data);
-			
+
 			this.setValueUser();
-		},(error:HttpErrorResponse) =>{
-			this.showError("Error","Algo salio mal ☹");
+		}, (error: HttpErrorResponse) => {
+			this.showError("Error", "Algo salio mal ☹");
 			console.log(error);
-			
+
 		});
 	}
 
-	formInit(){
+	formInit() {
 		this.formUser = this.formBuilder.group({
-			userName: this.formBuilder.control({value:null, disabled: true}, [Validators.required]),
+			userName: this.formBuilder.control({ value: null, disabled: true }, [Validators.required]),
 			email: this.formBuilder.control(null, [Validators.required, Validators.email]),
 			name: this.formBuilder.control(null, [Validators.required]),
 			secondName: this.formBuilder.control(null),
@@ -76,10 +76,10 @@ export class UserProfileComponent extends ToastComponent implements OnInit {
 		});
 	}
 
-	setValueUser(){
+	setValueUser() {
 
-		let name = this.toCapitalCase(this.user.firstName);
-		let lastName = this.toCapitalCase(this.user.lastName);
+		let name = this.validation.toCapitalCase(this.user.firstName);
+		let lastName = this.validation.toCapitalCase(this.user.lastName);
 		let username = this.user.username;
 		let aboutme = this.user.aboutMe;
 

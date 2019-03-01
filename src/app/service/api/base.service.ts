@@ -27,7 +27,8 @@ export abstract class BaseService <E extends Base, Z extends BaseMetadata<E>, T 
 
 	protected getHeader(): HttpHeaders {
 		return new HttpHeaders({
-			"etag": localStorage.getItem("eTag") ? localStorage.getItem("eTag") : null,
+			"Content-Type": "application/json",
+			"Authorization": localStorage.getItem("etag") ? localStorage.getItem("etag") : null,
 		});
 	}
 

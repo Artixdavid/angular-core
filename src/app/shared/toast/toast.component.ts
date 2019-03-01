@@ -1,21 +1,19 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/components/common/messageservice';
+import { Validation } from '../global/validation';
 
 @Component({
 	template: '<p-toast></p-toast>'
 })
-export class ToastComponent {
+export class ToastComponent  {
 
+	public validation = null;
 	constructor(
 		public messageService: MessageService,
 		public router: Router,
 	) {
-
-	}
-
-	toCapitalCase(string) {
-		return string.charAt(0).toUpperCase() + string.slice(1);
+		this.validation = new Validation();
 	}
 
 	showError(titulo: string, mensaje: string) {

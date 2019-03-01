@@ -37,7 +37,8 @@
 												(click)="login()"
 												iconPos="right"
 												[icon]="iconBtn"
-												[disabled]="!formLogin.valid && !valid"
+												[disabled]="!formLogin.valid"
+												#btn
 											>
 											</button>
 										</div>
@@ -69,15 +70,3 @@
 </div>
 
 <p-toast></p-toast>
-<pre>
-	valid: {{
-	   valid
-   }}
-
-   form: {{formLogin.valid}}
-</pre>
-
-
-<pre>
-	{{formLogin.value | json}}
-</pre>

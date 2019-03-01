@@ -15,6 +15,8 @@ import { AuthService } from 'src/app/service/auth/auth.service';
 })
 export class LoginComponent extends ToastComponent implements OnInit {
 
+	@ViewChild("btn") btn: any;
+
 	formLogin: FormGroup;
 	iconBtn = "pi pi-user";
 	valid = false;
@@ -24,7 +26,7 @@ export class LoginComponent extends ToastComponent implements OnInit {
 		public router: Router,
 		private formBuilder: FormBuilder,
 		private loginService: LoginService,
-		//private auth: AuthService
+		private auth: AuthService
 	) {
 
 		super(messageService, router);
@@ -48,31 +50,16 @@ export class LoginComponent extends ToastComponent implements OnInit {
 		});
 	}
 
-	login(){
-		let dataLogin:LoginDto = this.getDataLogin();
+	login() {
+		let dataLogin: LoginDto = this.getDataLogin();
 
 		this.loginService.login(dataLogin).subscribe((data: any) => {
 			this.controlLogin(true);
-			//this.auth.login(data);
-			console.log(data);
-			
+			this.auth.login(data);
 		}, (error: HttpErrorResponse) => {
-			console.log("mensaje");
-			console.log(error);
-			
-			// this.showError("Error", "Algo salio mal ☹");
-			// this.controlLogin(false);
-			// ifs = true;
+			this.showError("Error", "Algo salio mal ☹");
+			this.controlLogin(false);
 		});
-
-		// setTimeout(() => {
-		// 	if (!ifs) {
-		// 		this.showError("Error", "Algo salio mal ☹");
-		// 		this.controlLogin(false);
-		// 	}
-
-		// }, 1500);
-
 	}
 
 	getDataLogin(): LoginDto {
@@ -85,10 +72,10 @@ export class LoginComponent extends ToastComponent implements OnInit {
 
 	controlLogin(data) {
 		if (data) {
-			this.valid = true;
+			this.btn.nativeElement.disabled = true;
 			this.iconBtn = "pi pi-spin pi-spinner";
 		} else {
-			this.valid = false;
+			this.btn.nativeElement.disabled = false;
 			this.iconBtn = "pi pi-user";
 		}
 
