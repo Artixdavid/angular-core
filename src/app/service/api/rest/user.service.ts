@@ -21,5 +21,9 @@ export class UserService extends BaseService<User, UserMetadata> {
 	getUserByUserName(userName:string ){
 		return this.http.get<any>(`${this.getUrl()}/${userName}/user`, { headers: this.getHeader() });
 	}
+
+	getUserByEmail(email:string ){
+		return this.http.get<any>(`${this.getUrl()}/${email}`, { headers: this.getHeader() });
+	}
 	
 }
