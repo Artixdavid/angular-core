@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToastComponent } from 'src/app/shared/toast/toast.component';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/components/common/messageservice';
-import { LoginService } from 'src/app/service/api/rest/login.service';
 import { UserService } from 'src/app/service/api/rest/user.service';
 
 @Component({

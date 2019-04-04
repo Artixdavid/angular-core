@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './components/auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from 'primeng/components/common/messageservice';
-
 @NgModule({
 	declarations: [
 		AppComponent

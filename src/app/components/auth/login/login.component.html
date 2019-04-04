@@ -24,7 +24,14 @@
 
 										<div class="p-col-12">
 											<span class="ui-float-label">
-												<input type="password" formControlName="password" maxlength="30" pInputText> 
+												<!--<input type="password" formControlName="password" maxlength="30" pInputText> -->
+												<input type="password" 
+												[promptLabel]="'Escribe una Contraseña'"
+												[weakLabel]="'Facíl'"
+												[mediumLabel]="'Media'"
+												[strongLabel]="'Buena'"
+												 pInputText
+												 pPassword />
 												<label>Contraseña</label>
 											</span>
 										</div>

@@ -1,1 +1,56 @@
-Autenticar y validar antes del cambio de contraseña!! :)
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-xl-6 col-lg-12 col-md-9">
+			<div class="card o-hidden border-0 shadow-lg my-5">
+				<div class="card-body p-4">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="p-5">
+								<div class="text-center">
+									<h1 class="h4 text-gray-900 mb-4">Hola [NOMBRE APELLIDO]!</h1>
+								</div>
+
+								<form class="user">
+									<div class="p-grid">
+
+										<div class="p-col-12">
+											<span class="ui-float-label">
+												<input type="text" maxlength="20" pInputText>
+												<label>Contraseña</label>
+											</span>
+										</div>
+
+										<div class="p-col-12">
+											<span class="ui-float-label">
+												<!--<input type="password" maxlength="20" pInputText> -->
+												<input type="password" 
+												[promptLabel]="'Escribe una Contraseña'"
+												[weakLabel]="'Facíl'"
+												[mediumLabel]="'Media'"
+												[strongLabel]="'Buena'"
+												 pPassword />
+												<label>Repite la Contraseña</label>
+											</span>
+										</div>
+
+
+										<div class="p-col-6 p-offset-3">
+											<button pButton #loginBtn type="button" label="Cambiar"
+												class="ui-button-raised" (click)="login()" iconPos="right"
+												[icon]="iconBtn" [disabled]="!formRecovery.valid" #btn>
+											</button>
+										</div>
+
+									</div>
+								</form>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<p-toast></p-toast>

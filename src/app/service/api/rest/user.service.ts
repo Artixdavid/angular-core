@@ -18,12 +18,16 @@ export class UserService extends BaseService<User, UserMetadata> {
 		return 'users';
 	}
 
-	getUserByUserName(userName:string ){
+	getUserByUserName(userName: string) {
 		return this.http.get<any>(`${this.getUrl()}/${userName}/user`, { headers: this.getHeader() });
 	}
 
-	getUserByEmail(email:string ){
+	getUserByEmail(email: string) {
 		return this.http.get<any>(`${this.getUrl()}/${email}/recovery`);
 	}
-	
+
+	validateETag(eTag: string) {
+		return this.http.get<User>(`${this.getUrl()}/${eTag}/validate`);
+	}
+
 }

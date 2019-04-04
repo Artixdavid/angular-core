@@ -8,7 +8,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastModule } from 'primeng/toast';
 import { RecoveryComponent } from './recovery/recovery.component';
-
+import { PasswordModule } from 'primeng/password';
 @NgModule({
 	declarations: [
 		LoginComponent,
@@ -22,7 +22,8 @@ import { RecoveryComponent } from './recovery/recovery.component';
 		InputTextModule,
 		FormsModule,
 		ReactiveFormsModule,
-		ToastModule
+		ToastModule,
+		PasswordModule
 	]
 })
 export class AuthModule { }
