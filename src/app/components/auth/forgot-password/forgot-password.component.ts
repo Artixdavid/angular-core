@@ -43,7 +43,9 @@ export class ForgotPasswordComponent extends ToastComponent implements OnInit {
 		let email: string = this.formRecuperar.value.email;
 		console.log("Email: " + email);
 		
-		this.userService.getUserByEmail(email).subscribe(data => console.log(data));
+		this.userService.getUserByEmail(email).subscribe((data) => {
+			console.log(data)
+		});
 	}
 
 

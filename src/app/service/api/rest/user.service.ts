@@ -23,7 +23,7 @@ export class UserService extends BaseService<User, UserMetadata> {
 	}
 
 	getUserByEmail(email:string ){
-		return this.http.get<any>(`${this.getUrl()}/${email}`, { headers: this.getHeader() });
+		return this.http.get<any>(`${this.getUrl()}/${email}/recovery`);
 	}
 	
 }
