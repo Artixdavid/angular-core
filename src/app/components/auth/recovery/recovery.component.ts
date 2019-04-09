@@ -14,6 +14,8 @@ export class RecoveryComponent extends ToastComponent implements OnInit {
 
 	formRecovery: FormGroup;
 	eTag: string = null;
+	nombre: string = null;
+	apellido: string = null;
 
 	constructor(
 		public messageService: MessageService,
@@ -51,8 +53,9 @@ export class RecoveryComponent extends ToastComponent implements OnInit {
 
 	validarETag() {
 		let user = null ;
-		this.userService.validateETag(this.eTag).subscribe((data)=>{
-			console.log(2,data);
+		this.userService.validateETag(this.eTag).subscribe((data:any)=>{
+			this.apellido = data.firstName;
+			this.nombre = data.lastName;
 		})
 	}
 

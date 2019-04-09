@@ -5,6 +5,7 @@ import { MessageService } from 'primeng/components/common/messageservice';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UpdateUserDto } from 'src/app/service/models/dto/update-user-dto';
 
 @Component({
 	selector: 'app-user-profile',
@@ -100,6 +101,30 @@ export class UserProfileComponent extends ToastComponent implements OnInit {
 			address: this.user.address,
 			aboutMe: this.user.aboutMe,
 		});
+	}
+
+	setValueEdit(): UpdateUserDto {
+		let userDto: UpdateUserDto = new UpdateUserDto();
+		let form = this.formUser.value;
+
+		userDto.firstName = form.firstName;
+		userDto.middleName = form.secondName;
+		userDto.lastName = form.lastName;
+		userDto.motherLastName = form.motherLastName;
+		userDto.email = form.email;
+		userDto.cellPhone = form.cellPhone;
+		userDto.birthDate = form.fechaNacimiento;
+		userDto.address = form.address;
+		userDto.aboutMe = form.aboutMe;
+
+		return userDto;
+	}
+
+	actualizarPerfil() {
+		let profile = this.setValueEdit();
+
+		console.log(1,profile);
+		
 	}
 
 }
