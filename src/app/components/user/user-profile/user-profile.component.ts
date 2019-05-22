@@ -103,27 +103,38 @@ export class UserProfileComponent extends ToastComponent implements OnInit {
 		});
 	}
 
-	setValueEdit(): UpdateUserDto {
+	setValorPerfil(): UpdateUserDto {
 		let userDto: UpdateUserDto = new UpdateUserDto();
 		let form = this.formUser.value;
 
-		userDto.firstName = form.firstName;
-		userDto.middleName = form.secondName;
-		userDto.lastName = form.lastName;
-		userDto.motherLastName = form.motherLastName;
-		userDto.email = form.email;
-		userDto.cellPhone = form.cellPhone;
-		userDto.birthDate = form.fechaNacimiento;
-		userDto.address = form.address;
-		userDto.aboutMe = form.aboutMe;
+		userDto.firstName = (form.name) ? form.name: null;
+		userDto.middleName = (form.secondName) ? form.secondName: null;
+		userDto.lastName = (form.lastName) ? form.lastName: null;
+		userDto.motherLastName = (form.motherLastName) ? form.motherLastName : null;
+		userDto.email = (form.email) ? form.email : null; 
+		userDto.cellPhone = (form.cellPhone) ? form.cellPhone : null;
+		userDto.birthDate = (form.fechaNacimiento) ? form.fechaNacimiento: null;
+		userDto.address = (form.address) ? form.address : null;
+		userDto.aboutMe = (form.aboutMe) ? form.aboutMe : null;
+		userDto.userName = this.userName;
 
 		return userDto;
 	}
 
 	actualizarPerfil() {
-		let profile = this.setValueEdit();
+		let perfil = this.setValorPerfil();
 
-		console.log(1,profile);
+		this.userService.actualizarPerfilUsuario(perfil).subscribe((data) =>{
+			console.log("Envio de actulizacion");
+			console.log(2,data);
+			
+		},(error) =>{
+			console.log("Error");
+			console.log(error);
+		})
+		
+
+		console.log(1,perfil);
 		
 	}
 

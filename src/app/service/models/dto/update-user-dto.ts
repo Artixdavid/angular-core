@@ -1,4 +1,5 @@
 export class UpdateUserDto{
+	userName: string;
 	firstName: string;
 	middleName: string;
 	lastName: string;

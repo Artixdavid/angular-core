@@ -72,7 +72,7 @@
 
 					<div class="p-col-4">
 						<span class="ui-float-label">
-							<p-calendar [touchUI]="true" formControlName="fechaNacimiento" [readonlyInput]="true"></p-calendar>
+							<p-calendar [monthNavigator]="true" formControlName="fechaNacimiento" [readonlyInput]="true"></p-calendar>
 							<label>Fecha de Nacimiento</label>
 						</span>
 					</div>
@@ -91,7 +91,7 @@
 						</span>
 					</div>
 
-					<div class="p-col-2 p-offset-5">
+					<div class="p-col-2 p-offset-6">
 						<button pButton type="button" label="Actualizar Perfil" class="ui-button-raised" (click)="actualizarPerfil()"></button>
 					</div>
 
